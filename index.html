@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Temperature Convertion</title>
+      <link rel="stylesheet" href="/bootstrap-5.1.0-dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="/style.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet" />
+   </head>
+   <body>
+      <div class="package">
+         <div class="container">
+            <h2 class="text-center fw-bold text-uppercase">TEMPERATURE CONVERTER</h2>
+
+            <div class="container">
+               <div class="row pt-4">
+                  <div class="col-5">
+                     <select class="form-select" id="fromTemp">
+                        <option value="cel" selected>Celcius</option>
+                        <option value="far">Fahrenheit</option>
+                        <option value="rea">Reamur</option>
+                     </select>
+                  </div>
+                  <h5 class="col-1 m-auto fw-bold">to</h5>
+                  <div class="col-5">
+                     <select class="form-select" id="toTemp">
+                        <option value="cel" selected>Celcius</option>
+                        <option value="far">Fahrenheit</option>
+                        <option value="rea">Reamur</option>
+                     </select>
+                  </div>
+               </div>
+               <br />
+               <div class="form-floating mb-3">
+                  <input type="number" class="form-control" id="inputAngka" placeholder="number" />
+                  <label for="inputAngka">Type Here</label>
+               </div>
+               <div class="mx-auto text-center">
+                  <button type="button" class="btn btn-dark text-uppercase" onclick="submitted()">convert</button>
+               </div>
+               <br />
+               <div class="form-floating mb-3">
+                  <input type="number" class="form-control" id="result" placeholder="result" disabled />
+                  <label for="result">Result</label>
+               </div>
+            </div>
+            <hr />
+            <div class="container text-center">
+               <h6>Change Background Color</h6>
+               <input type="text" class="textColor" id="plhWarna" placeholder="Type Here" />
+               <button type="button" class="btn btn-dark text-uppercase" onclick="changeColor()">convert</button>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="/bootstrap-5.1.0-dist/js/bootstrap.min.js"></script>
+   <script src="/Convert.js"></script>
+   <script>
+      const convert = new Convert();
+      function submitted() {
+         const selFrom = document.getElementById("fromTemp").value;
+         const selTo = document.getElementById("toTemp").value;
+         const num = document.getElementById("inputAngka").value;
+         console.log(selFrom);
+         console.log(selTo);
+         console.log(num);
+
+         if (selFrom == "cel") {
+            const hsl = convert.fromCelcius(selTo, num);
+            const show = (document.getElementById("result").value = hsl);
+            console.log(hsl);
+         }
+         if (selFrom == "far") {
+            const hsl = convert.fromFarenheit(selTo, num);
+            const show = (document.getElementById("result").value = hsl);
+            console.log(hsl);
+         }
+         if (selFrom == "rea") {
+            const hsl = convert.fromReamur(selTo, num);
+            const show = (document.getElementById("result").value = hsl);
+            console.log(hsl);
+         }
+         console.log("selesai");
+      }
+
+      function changeColor() {
+         document.body.style.backgroundColor = document.getElementById("plhWarna").value;
+      }
+   </script>
+</html>

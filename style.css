@@ -1,0 +1,50 @@
+*:after {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: bisque;
+   font-family: "Verdana", sans-serif;
+   font-weight: lighter;
+}
+
+.package {
+   width: 650px;
+   background-color: white;
+   padding: 70px 40px;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 50%;
+   top: 50%;
+   box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+   border-radius: 8px;
+}
+
+input {
+   width: 75%;
+   height: 50px;
+   border-radius: 5px;
+   border: 2px solid #d2d2d2;
+   outline: none;
+}
+
+.form-floating {
+   font-family: "Roboto Mono", monospace;
+   font-size: larger;
+}
+
+footer {
+   background-color: #303648;
+}
+
+.colorTengah {
+   align-items: center;
+}
+.textColor {
+   width: 30%;
+   border-radius: 5px;
+   border: 2px solid #d2d2d2;
+   outline: none;
+}
